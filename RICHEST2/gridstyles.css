@@ -13,11 +13,12 @@ body{
 
 header 
 {
-    background-color:black;
+    background-color:rgb(0, 0, 0,.85);
     text-align:center;
     position: fixed;
     width:100%;
     z-index:999;
+
     
    
 }
@@ -120,16 +121,17 @@ nav a:hover {
 
 .container
 {
+  
     display:grid;
-    grid-template-columns: [first] 1fr [second] 2fr [third] 1fr;
-    grid-template-rows: [first-row] 2fr, [second-row] 4fr, [third-row] 4fr ;
+    grid-template-columns: [first] 1fr [second] 2fr [third] 2fr [fourth] 1fr;
+    grid-template-rows: [first-row] 1fr, [second-row] 1fr, [third-row] 1fr;
     
     justify-items:center;
 
     grid-template-areas: 
-    " . . ."
-    "apparel apparel apparel"
-    ". . . "
+    ". . . ."
+    ". bakery apparel ."
+    ". . . . "
     ;
 }
 
@@ -143,10 +145,28 @@ nav a:hover {
 {
     grid-area:apparel;
     background-color:purple;
-    width:100%;
+    display:flex;
+    align-items: center;
+    
 
 }
 .apparel 
 {
     width:100%;
+}
+
+
+.imgbox2
+{
+    grid-area:bakery;
+    background-color:green;
+   
+    
+    
+
+}
+.bakery
+{
+    width:100%;
+    height:100%;
 }
