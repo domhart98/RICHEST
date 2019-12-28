@@ -1,0 +1,152 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+
+    margin:0;
+}
+
+
+/* navigation styles start here */
+
+header 
+{
+    background-color:black;
+    text-align:center;
+    position: fixed;
+    width:100%;
+    z-index:999;
+    
+   
+}
+
+header h1 {
+    color:white;
+}
+
+nav {
+    position: absolute;
+    text-align:left;
+    background-color:black;
+    width:100%;
+
+    margin-top:-2px;
+    
+    display:none;
+    
+}
+
+nav ul{
+
+    padding:0;
+    margin:0;
+    list-style-type: none;
+}
+
+nav li {
+    margin-top:1em;
+    margin-bottom:1em;
+    margin-left:1em;
+    
+}
+
+nav a 
+{
+    text-decoration: none;
+    font-size: 2rem;
+    color:white;
+
+
+}
+
+nav a:hover {
+    color:white;
+    
+
+}
+
+.nav-toggle:checked ~ nav 
+{
+    display:block;
+}
+
+.nav-toggle
+{
+    display:none; 
+}
+
+.nav-toggle-label{
+    position:absolute;
+    top:0;
+    left:1em;
+    display:flex;
+    align-items:center;
+    height:100%;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after
+{
+    background-color:white;
+    height:2px;
+    display:block;
+    width:2em;
+    border-radius:3px;
+    position:relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after
+{
+    content:'';
+    position:absolute;
+}
+
+.nav-toggle-label span::before
+{
+    top:7px;
+}
+
+.nav-toggle-label span::after
+{
+    bottom:7px; 
+}
+
+/* navigation styles end here */
+
+
+.container
+{
+    display:grid;
+    grid-template-columns: [first] 1fr [second] 2fr [third] 1fr;
+    grid-template-rows: [first-row] 2fr, [second-row] 4fr, [third-row] 4fr ;
+    
+    justify-items:center;
+
+    grid-template-areas: 
+    " . . ."
+    "apparel apparel apparel"
+    ". . . "
+    ;
+}
+
+.blue {
+    background-color: blue; 
+    
+}
+
+
+.imgbox
+{
+    grid-area:apparel;
+    background-color:purple;
+    width:100%;
+
+}
+.apparel 
+{
+    width:100%;
+}
