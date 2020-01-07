@@ -15,7 +15,8 @@ header
 {
     background-color:rgb(0, 0, 0,.85);
     text-align:center;
-    position: fixed;
+    position:sticky;
+    top:0;
     width:100%;
     z-index:999;
 
@@ -30,7 +31,7 @@ header h1 {
 nav {
     position: absolute;
     text-align:left;
-    background-color:black;
+    background-color:rgb(0, 0, 0,.85);
     width:100%;
 
     margin-top:-2px;
@@ -121,18 +122,39 @@ nav a:hover {
 
 .container
 {
+    
   
     display:grid;
     grid-template-columns: [first] 1fr [second] 2fr [third] 2fr [fourth] 1fr;
-    grid-template-rows: [first-row] 1fr, [second-row] 1fr, [third-row] 1fr;
+    grid-template-rows: [first-row] 1fr, [second-row] 1fr, [third-row] 1fr, [fourth-row] 1fr;
     
     justify-items:center;
 
     grid-template-areas: 
-    ". . . ."
-    ". bakery apparel ."
-    ". . . . "
-    ;
+        "header header header header"
+        "apparel apparel apparel apparel"
+        "bakery bakery bakery bakery"
+        "text text text text"
+        ;
+
+    
+}
+@media only screen and (min-width: 768px) 
+{
+    .container
+    {
+        grid-template-areas: 
+        "header header header header"
+        ". bakery apparel ."
+        ". text text ."
+        ". . . . "
+        ;
+    }
+
+    .bakery
+    {
+        
+    }
 }
 
 .blue {
@@ -169,4 +191,13 @@ nav a:hover {
 {
     width:100%;
     height:100%;
+}
+
+.header 
+{
+    grid-area:header;
+}
+
+.text {
+    grid-area:text;
 }
