@@ -13,12 +13,14 @@ body{
 
 header 
 {
-    background-color:rgb(0, 0, 0,.85);
+    background-color:rgb(0, 0, 0);
     text-align:center;
     position:sticky;
     top:0;
     width:100%;
     z-index:999;
+
+   
 
     
    
@@ -26,17 +28,23 @@ header
 
 header h1 {
     color:white;
+    
 }
 
 nav {
     position: absolute;
     text-align:left;
-    background-color:rgb(0, 0, 0,.85);
+    background-color:rgb(0, 0, 0);
     width:100%;
 
     margin-top:-2px;
+
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
     
-    display:none;
+    
+    
     
 }
 
@@ -45,12 +53,15 @@ nav ul{
     padding:0;
     margin:0;
     list-style-type: none;
+    
 }
 
 nav li {
     margin-top:1em;
     margin-bottom:1em;
     margin-left:1em;
+    
+
     
 }
 
@@ -59,19 +70,29 @@ nav a
     text-decoration: none;
     font-size: 2rem;
     color:white;
+    
+
+    opacity:0;
+    transition:opacity 200ms ease-in-out;
 
 
 }
 
 nav a:hover {
-    color:white;
+    
     
 
 }
 
 .nav-toggle:checked ~ nav 
 {
-    display:block;
+    transform:  scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a
+{
+    opacity:1;
+    transition:opacity 200ms ease-in-out 200ms;
 }
 
 .nav-toggle
@@ -151,10 +172,53 @@ nav a:hover {
         ;
     }
 
-    .bakery
-    {
+    .nav-toggle-label {
+        display:none;
         
     }
+
+    header {
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        /*grid-template-areas:
+        "logo nav nav nav"*/
+
+        
+
+    }
+
+    .logo
+    {
+       
+        grid-area:logo;
+        grid-column: 1/2;
+    }
+
+    nav {
+        all:unset;
+        grid-area:nav;
+
+        margin-top:7px;
+        
+        grid-column: 2/4;
+
+        display:flex;
+        justify-content: center;
+    }
+
+    nav a {
+        opacity:1; 
+    }
+
+    nav ul 
+    {
+        display:flex;
+        
+    }
+    
+
+  
 }
 
 .blue {
@@ -201,3 +265,5 @@ nav a:hover {
 .text {
     grid-area:text;
 }
+
+
